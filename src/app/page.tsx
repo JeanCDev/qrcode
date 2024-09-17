@@ -63,6 +63,7 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8138887066345693" crossOrigin="anonymous"></script>
     </div>
   );
 }
