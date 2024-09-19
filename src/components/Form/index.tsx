@@ -1,5 +1,6 @@
 import TextArea from "../TextArea";
 import VCardForm from "../VCardForm";
+import WifiForm from "../WifiForm";
 
 interface FormProps {
   type: string;
@@ -10,6 +11,7 @@ const Form = ({type, ...props}: FormProps) => {
   const ComponentList: any = {
     'text': TextArea,
     'vcard': VCardForm,
+    'wifi': WifiForm,
   };
 
   const Component = ComponentList[type];
