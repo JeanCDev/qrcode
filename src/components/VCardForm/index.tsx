@@ -50,24 +50,20 @@ const formatVCardText = ({
   personalEmail,
   companyAddress,
   companyCountry
-}: FormValue) => {
-  let vcard = 'BEGIN:VCARD \nVERSION:3.0\n';
-  vcard += 'FN:' + firstName + " " + lastName + "\n";
-  vcard += 'N:' + lastName + ';' + firstName + ';;;\n';
-  vcard += 'TEL;TYPE=CELL:' + cell + '\n';
-  vcard += 'TEL;TYPE=HOME:' + phone + '\n';
-  vcard += 'TEL;TYPE=WORK:' + work + '\n';
-  vcard += 'ORG:' + company  + ';' + companyCity + '\n';
-  vcard += 'TITLE:' + job + '\n';
-  vcard += 'ADR;TYPE=WORK:;;' + companyAddress + ';' + companyCity + ';' + companyState + ';' + companyCity +  + ';' + companyZip + ';' + companyCountry +'\n';
-  vcard += 'ADR;TYPE=HOME:;;' + homeAddress  + ';' + homeCity + ';' + homeState + ';' + homeCity +  + ';' + homeZip + ';' + homeCountry +'\n';
-  vcard += 'EMAIL;TYPE=WORK:' + personalEmail + '\n';
-  vcard += 'EMAIL;TYPE=HOME:' + workEmail + '\n';
-  vcard += 'URL:' + website + '\n';
-  vcard += 'END:VCARD';
-
-  return vcard;
-};
+}: FormValue) => `BEGIN:VCARD \nVERSION:3.0
+FN:${firstName} ${lastName}
+N:${lastName};${firstName};;;
+TEL;TYPE=CELL:${cell}
+TEL;TYPE=HOME:${phone}
+TEL;TYPE=WORK:${work}
+ORG:${company};${companyCity}
+TITLE:${job}
+ADR;TYPE=WORK:;;${companyAddress};${companyCity};${companyState};${companyCity};${companyZip};${companyCountry}
+ADR;TYPE=HOME:;;${homeAddress};${homeCity};${homeState};${homeCity};${homeZip};${homeCountry}
+EMAIL;TYPE=WORK:${personalEmail}
+EMAIL;TYPE=HOME:${workEmail}
+URL:${website}
+END:VCARD`;
 
 const VCardForm = ({
   setValue

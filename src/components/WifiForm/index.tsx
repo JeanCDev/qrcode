@@ -16,7 +16,7 @@ const formatWifiText = ({
   hiddenSsid,
   encryption,
   networkName
-}: FormValue) => 'WIFI:T:' + encryption + ';S:' + networkName.trim() + ';P:' + password.trim() + ';H:' + (hiddenSsid ? 'TRUE' : '') + ';;';
+}: FormValue) => `WIFI:T:${encryption};S:${networkName.trim()};P:${password.trim()};H:${(hiddenSsid ? 'TRUE' : '')};;`;
 
 const WifiForm = ({
   setValue
@@ -38,7 +38,6 @@ const WifiForm = ({
   };
 
   useEffect(() => {
-    console.log(formatWifiText(formValue));
     setValue(formatWifiText(formValue));
   }, [setValue, formValue]);
 
