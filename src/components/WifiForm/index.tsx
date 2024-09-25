@@ -42,17 +42,17 @@ const WifiForm = ({
   }, [setValue, formValue]);
 
   return (
-    <form className="flex flex-col w-full gap-3" onChange={onChange}>
-      <input type="text" placeholder="Nome da rede" name="networkName"/>
-      <input type="text" placeholder="Senha" name="password"/>
-      <select name="encryption">
+    <form className="text-zinc-600 flex flex-col w-full gap-3" onChange={onChange} onSubmit={e => e.preventDefault()}>
+      <input type="text" placeholder="Nome da rede" name="networkName" className="p-0.5 rounded-md"/>
+      <input type="text" placeholder="Senha" name="password" className="p-0.5 rounded-md"/>
+      <select name="encryption" className="p-0.5 rounded-md">
         <option value="WPA">WPA</option>
         <option value="WEP">WEP</option>
         <option value="">Sem criptografia</option>
       </select>
-      <label htmlFor="">
-        <input type="checkbox" placeholder="Rede secreta" name="hiddenSsid"/>
-        <span className="ml-2">Rede secreta?</span>
+      <label htmlFor="checkbox">
+        <input  className="p-0.5 rounded-md mr-2" id="checkbox" type="checkbox" placeholder="Rede secreta" name="hiddenSsid"/>
+        Rede secreta?
       </label>
     </form>
   );

@@ -1,0 +1,22 @@
+#mainPage {
+  width: 100%;
+
+  #mainContent {
+    @media only screen and (min-width: 1024px) {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    #qrcode-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      canvas {
+        width: 100%;
+        border-radius: 8px;
+        max-width: 250px !important;
+        max-height: 250px !important;
+      }
+    }
+  }
+}

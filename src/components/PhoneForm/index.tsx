@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import ddiObj from "../../helpers/ddi.json";
+import Image from "next/image";
 
 interface PhoneFormProps {
   setValue: (value: string) => void;
@@ -39,16 +40,15 @@ const PhoneForm = ({
   const mapDdi = () => {
     return ddiObj.ddi.map(item => (
       <option value={item.ddi}>
-        <img src={item.img} alt={item.pais}/>
         {item.pais}
       </option>
     ));
   }
 
   return (
-    <form className="flex flex-col w-full gap-3" onChange={onChange}>
-      <input type="number" placeholder="Assunto" name="phone"/>
-      <select name="ddi">
+    <form className="text-zinc-600 flex flex-col w-full gap-3" onChange={onChange} onSubmit={e => e.preventDefault()}>
+      <input type="number" placeholder="Telefone" name="phone" className="p-0.5 rounded-md"/>
+      <select name="ddi" className="p-0.5 rounded-md">
         {mapDdi()}
       </select>
     </form>

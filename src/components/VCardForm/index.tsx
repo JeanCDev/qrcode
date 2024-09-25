@@ -106,28 +106,53 @@ const VCardForm = ({
   }, [setValue, formValue]);
 
   return (
-    <form className="flex flex-col w-full gap-3" onChange={onChange}>
-      <input type="text" placeholder="Primeiro nome" name="firstName"/>
-      <input type="text" placeholder="Último nome" name="lastName"/>
-      <input type="text" placeholder="Empresa" name="company"/>
-      <input type="text" placeholder="Trabalho" name="job"/>
-      <input type="text" placeholder="Departamento" name="department"/>
-      <input type="text" placeholder="Endereço da empresa" name="companyAddress"/>
-      <input type="text" placeholder="Cidade da empresa" name="companyCity"/>
-      <input type="text" placeholder="Estado da empresa" name="companyState"/>
-      <input type="text" placeholder="País da empresa" name="companyCountry"/>
-      <input type="text" placeholder="Cep da empresa" name="companyZip"/>
-      <input type="text" placeholder="Endereço" name="homeAddress"/>
-      <input type="text" placeholder="Cidade" name="homeCity"/>
-      <input type="text" placeholder="Estado" name="homeState"/>
-      <input type="text" placeholder="País" name="homeCountry"/>
-      <input type="text" placeholder="Cep" name="homeZip"/>
-      <input type="number" placeholder="Celular" name="cell"/>
-      <input type="number" placeholder="Telefone" name="phone"/>
-      <input type="number" placeholder="Telefone do trabalho" name="work"/>
-      <input type="email" placeholder="E-mail pessoal" name="personalEmail"/>
-      <input type="email" placeholder="E-mail de trabalho" name="workEmail"/>
-      <input type="text" placeholder="Site" name="website"/>
+    <form className="text-zinc-600 flex flex-col w-full gap-3" onChange={onChange} onSubmit={e => e.preventDefault()}>
+      <div className="flex gap-3">
+        <input type="text" placeholder="Primeiro nome" name="firstName" className="p-0.5 rounded-md flex-1"/>
+        <input type="text" placeholder="Último nome" name="lastName" className="p-0.5 rounded-md flex-1"/>
+      </div>
+      <div className="flex gap-3 mt-3">
+        <input type="text" placeholder="Empresa" name="company" className="p-0.5 rounded-md"/>
+        <div className="flex gap-3 flex-1">
+          <input type="text" placeholder="Trabalho" name="job" className="p-0.5 rounded-md flex-1"/>
+          <input type="text" placeholder="Departamento" name="department" className="p-0.5 rounded-md flex-1"/>
+        </div>
+      </div>
+      <div className="gap-3 flex mt-3 flex-wrap">
+        <input type="text" placeholder="Endereço da empresa" name="companyAddress" className="p-0.5 rounded-md w-full"/>
+        <div className="flex gap-3 w-full">
+          <input type="text" placeholder="Cidade da empresa" name="companyCity" className="p-0.5 rounded-md flex-1"/>
+          <input type="text" placeholder="Estado da empresa" name="companyState" className="p-0.5 rounded-md flex-1"/>
+        </div>
+        <div className="flex gap-3 flex-1">
+          <input type="text" placeholder="País da empresa" name="companyCountry" className="p-0.5 rounded-md flex-1"/>
+          <input type="text" placeholder="Cep da empresa" name="companyZip" className="p-0.5 rounded-md"/>
+        </div>
+        <div className="flex gap-3 flex-1">
+          <input type="number" placeholder="Telefone do trabalho" name="work" className="p-0.5 rounded-md flex-1"/>
+          <input type="email" placeholder="E-mail de trabalho" name="workEmail" className="p-0.5 rounded-md flex-1"/>
+        </div>
+      </div>
+      <div className="gap-3 flex mt-3 flex-wrap">
+        <input type="text" placeholder="Endereço" name="homeAddress" className="p-0.5 rounded-md w-full"/>
+        <div className="flex gap-3 w-full flex-1">
+          <input type="text" placeholder="Cidade" name="homeCity" className="p-0.5 rounded-md flex-1"/>
+          <input type="text" placeholder="Estado" name="homeState" className="p-0.5 rounded-md flex-1"/>
+        </div>
+        <div className="flex gap-3 w-full flex-1">
+          <input type="text" placeholder="País" name="homeCountry" className="p-0.5 rounded-md flex-1"/>
+          <input type="text" placeholder="Cep" name="homeZip" className="p-0.5 rounded-md"/>
+        </div>
+        <div className="flex gap-3 w-full flex-1">
+          <input type="number" placeholder="Celular" name="cell" className="p-0.5 rounded-md flex-1"/>
+          <input type="number" placeholder="Telefone" name="phone" className="p-0.5 rounded-md flex-1"/>
+        </div>
+        <input type="email" placeholder="E-mail pessoal" name="personalEmail" className="p-0.5 rounded-md w-full"/>
+      </div>
+      <div className="gap-3 flex mt-3 flex-wrap">
+
+      </div>
+      <input type="text" placeholder="Site" name="website" className="p-0.5 rounded-md"/>
     </form>
   );
 };

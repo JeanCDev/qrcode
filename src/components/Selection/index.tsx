@@ -6,7 +6,7 @@ const Selection = ({
   select
 }: SelectionProps) => {
   return (
-    <div className="flex gap-6">
+    <div className="flex flex-wrap gap-6 mb-8">
       <button onClick={select.bind(null, 'text')}>Texto</button>
       <button onClick={select.bind(null, 'vcard')}>Vcard</button>
       <button onClick={select.bind(null, 'wifi')}>Wi-fi</button>

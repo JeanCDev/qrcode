@@ -49,10 +49,10 @@ const WhatsAppForm = ({
   }
 
   return (
-    <form className="flex flex-col w-full gap-3" onChange={onChange}>
-      <input type="number" placeholder="Assunto" name="phone"/>
-      <textarea name="message" id=""></textarea>
-      <select name="ddi">
+    <form className="text-zinc-600 flex flex-col w-full gap-3" onChange={onChange} onSubmit={e => e.preventDefault()}>
+      <input type="number" placeholder="Número do celular" name="phone"  className="p-0.5 rounded-md"/>
+      <textarea placeholder="Mensagem" name="message" className="p-0.5 rounded-md"></textarea>
+      <select name="ddi"  className="p-0.5 rounded-md">
         {mapDdi()}
       </select>
     </form>

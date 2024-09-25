@@ -39,10 +39,10 @@ const EmailForm = ({
   }, [setValue, formValue]);
 
   return (
-    <form className="flex flex-col w-full gap-3" onChange={onChange}>
-      <input type="email" placeholder="Destinatário" name="email"/>
-      <input type="text" placeholder="Assunto" name="subject"/>
-      <textarea name="message" id=""></textarea>
+    <form className="text-zinc-600 flex flex-col w-full gap-3" onChange={onChange}>
+      <input type="email" placeholder="Destinatário" name="email" className="p-0.5 rounded-md"/>
+      <input type="text" placeholder="Assunto" name="subject" className="p-0.5 rounded-md"/>
+      <textarea placeholder="Mensagem"  name="message" id="" className="p-0.5 rounded-md"></textarea>
     </form>
   );
 };
