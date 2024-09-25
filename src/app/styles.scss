@@ -11,8 +11,9 @@
       align-items: flex-start;
       justify-content: center;
 
+      flex: 1;
       canvas {
-        width: 100%;
+        flex: 1;
         border-radius: 8px;
         max-width: 250px !important;
         max-height: 250px !important;
