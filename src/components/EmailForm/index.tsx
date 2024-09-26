@@ -1,4 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface EmailFormProps {
   setValue: (value: string) => void;
@@ -19,6 +20,7 @@ const formatVCardText = ({
 const EmailForm = ({
   setValue
 }: EmailFormProps) => {
+  const { t } = useTranslation();
   const [formValue, setFormValue] = useState({
     email: "",
     subject: "",
@@ -40,9 +42,9 @@ const EmailForm = ({
 
   return (
     <form className="text-zinc-600 flex flex-col w-full gap-3" onChange={onChange}>
-      <input type="email" placeholder="Destinatário" name="email" className="p-0.5 rounded-md"/>
-      <input type="text" placeholder="Assunto" name="subject" className="p-0.5 rounded-md"/>
-      <textarea placeholder="Mensagem"  name="message" id="" className="p-0.5 rounded-md"></textarea>
+      <input type="email" placeholder={t("receiverEmail")} name="email" className="p-0.5 rounded-md"/>
+      <input type="text" placeholder={t("subject")} name="subject" className="p-0.5 rounded-md"/>
+      <textarea placeholder={t("message")}  name="message" id="" className="p-0.5 rounded-md"></textarea>
     </form>
   );
 };

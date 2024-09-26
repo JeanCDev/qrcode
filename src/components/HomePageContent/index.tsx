@@ -1,14 +1,12 @@
 'use client';
 
-import Form from "@/components/Form";
-import Selection from "@/components/Selection";
-import Image from "next/image";
 import { useState } from "react";
+import Selection from "../Selection";
+import Form from "../Form";
 import { QRCode } from "react-qrcode-logo";
+import Image from "next/image";
 
-import "./styles.scss";
-
-export default function Home() {
+const HomePageContent = () => {
   const [type, setType] = useState('text')
   const [value, setValue] = useState(' ');
 
@@ -74,4 +72,6 @@ export default function Home() {
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8138887066345693" crossOrigin="anonymous"></script>
     </div>
   );
-}
+};
+
+export default HomePageContent;

@@ -1,4 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface VCardFormProps {
   setValue: (value: string) => void;
@@ -68,6 +69,7 @@ END:VCARD`;
 const VCardForm = ({
   setValue
 }: VCardFormProps) => {
+  const { t } = useTranslation();
   const [formValue, setFormValue] = useState({
     job: "",
     work: "",
@@ -108,48 +110,48 @@ const VCardForm = ({
   return (
     <form className="flex flex-col flex-1 text-zinc-600 gap-3" onChange={onChange} onSubmit={e => e.preventDefault()}>
       <div className="grid grid-cols-2 gap-3">
-        <input type="text" placeholder="Primeiro nome" name="firstName" className="p-0.5 rounded-md"/>
-        <input type="text" placeholder="Último nome" name="lastName" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("fistName")} name="firstName" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("lastName")} name="lastName" className="p-0.5 rounded-md"/>
       </div>
 
       <div className="grid grid-cols-3 gap-3 mt-3">
-        <input type="text" placeholder="Empresa" name="company" className="p-0.5 rounded-md"/>
-        <input type="text" placeholder="Trabalho" name="job" className="p-0.5 rounded-md"/>
-        <input type="text" placeholder="Departamento" name="department" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("company")} name="company" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("job")} name="job" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("department")} name="department" className="p-0.5 rounded-md"/>
       </div>
 
       <div className="grid grid-cols-3 mt-3 gap-3">
-        <input type="text" placeholder="Endereço da empresa" name="companyAddress" className="p-0.5 rounded-md flex-1"/>
-        <input type="text" placeholder="Cidade da empresa" name="companyCity" className="p-0.5 rounded-md"/>
-        <input type="text" placeholder="Estado da empresa" name="companyState" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("companyAddress")} name="companyAddress" className="p-0.5 rounded-md flex-1"/>
+        <input type="text" placeholder={t("companyCity")} name="companyCity" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("companyState")} name="companyState" className="p-0.5 rounded-md"/>
       </div>
       <div className="grid grid-cols-2 gap-3">
-        <input type="text" placeholder="País da empresa" name="companyCountry" className="p-0.5 rounded-md"/>
-        <input type="text" placeholder="Cep da empresa" name="companyZip" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("companyCountry")} name="companyCountry" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("companyZip")} name="companyZip" className="p-0.5 rounded-md"/>
       </div>
       <div className="grid grid-cols-2 gap-3">
-        <input type="number" placeholder="Telefone do trabalho" name="work" className="p-0.5 rounded-md"/>
-        <input type="email" placeholder="E-mail de trabalho" name="workEmail" className="p-0.5 rounded-md"/>
+        <input type="number" placeholder={t("companyPhone")} name="work" className="p-0.5 rounded-md"/>
+        <input type="email" placeholder={t("companyEmail")} name="workEmail" className="p-0.5 rounded-md"/>
       </div>
 
       <div className="grid grid-cols-3 gap-3 mt-3">
-        <input type="text" placeholder="Endereço" name="homeAddress" className="p-0.5 rounded-md"/>
-        <input type="text" placeholder="Cidade" name="homeCity" className="p-0.5 rounded-md"/>
-        <input type="text" placeholder="Estado" name="homeState" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("address")} name="homeAddress" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("city")} name="homeCity" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("state")} name="homeState" className="p-0.5 rounded-md"/>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <input type="text" placeholder="País" name="homeCountry" className="p-0.5 rounded-md"/>
-        <input type="text" placeholder="Cep" name="homeZip" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("country")} name="homeCountry" className="p-0.5 rounded-md"/>
+        <input type="text" placeholder={t("zip")} name="homeZip" className="p-0.5 rounded-md"/>
       </div>
 
       <div className="grid grid-cols-3 gap-3">
-        <input type="number" placeholder="Celular" name="cell" className="p-0.5 rounded-md"/>
-        <input type="number" placeholder="Telefone" name="phone" className="p-0.5 rounded-md"/>
-        <input type="email" placeholder="E-mail pessoal" name="personalEmail" className="p-0.5 rounded-md"/>
+        <input type="number" placeholder={t("cellphone")} name="cell" className="p-0.5 rounded-md"/>
+        <input type="number" placeholder={t("phone")} name="phone" className="p-0.5 rounded-md"/>
+        <input type="email" placeholder={t("email")} name="personalEmail" className="p-0.5 rounded-md"/>
       </div>
 
-      <input type="text" placeholder="Site" name="website" className="p-0.5 rounded-md mt-3"/>
+      <input type="text" placeholder={t("website")} name="website" className="p-0.5 rounded-md mt-3"/>
     </form>
   );
 };

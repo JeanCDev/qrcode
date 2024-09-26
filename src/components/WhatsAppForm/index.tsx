@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import ddiObj from "../../helpers/ddi.json";
+import { useTranslation } from "react-i18next";
 
 interface WhatsAppFormProps {
   setValue: (value: string) => void;
@@ -20,6 +21,7 @@ const formatText = ({
 const WhatsAppForm = ({
   setValue
 }: WhatsAppFormProps) => {
+  const { t } = useTranslation();
   const [formValue, setFormValue] = useState({
     ddi: "",
     phone: "",
@@ -50,8 +52,8 @@ const WhatsAppForm = ({
 
   return (
     <form className="text-zinc-600 flex flex-col w-full gap-3" onChange={onChange} onSubmit={e => e.preventDefault()}>
-      <input type="number" placeholder="Número do celular" name="phone"  className="p-0.5 rounded-md"/>
-      <textarea placeholder="Mensagem" name="message" className="p-0.5 rounded-md"></textarea>
+      <input type="number" placeholder={t("phoneNumber")} name="phone"  className="p-0.5 rounded-md"/>
+      <textarea placeholder={t("message")} name="message" className="p-0.5 rounded-md"></textarea>
       <select name="ddi"  className="p-0.5 rounded-md">
         {mapDdi()}
       </select>
