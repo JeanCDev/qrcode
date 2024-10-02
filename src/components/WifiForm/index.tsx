@@ -52,8 +52,8 @@ const WifiForm = ({
         <option value="WEP">WEP</option>
         <option value="">{t("notEncripted")}</option>
       </select>
-      <label htmlFor="checkbox">
-        <input  className="p-0.5 rounded-md mr-2" id="checkbox" type="checkbox" placeholder="Rede secreta" name="hiddenSsid"/>
+      <label htmlFor="checkbox" className="text-slate-100">
+        <input className="p-0.5 rounded-md mr-2" id="checkbox" type="checkbox" placeholder="Rede secreta" name="hiddenSsid"/>
         {t("secretNetwork")}
       </label>
     </form>

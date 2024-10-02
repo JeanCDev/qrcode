@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import Button from "../Button";
 
 interface SelectionProps {
   select: (value: string) => void
@@ -11,12 +12,12 @@ const Selection = ({
 
   return (
     <div className="flex flex-wrap gap-6 mb-8">
-      <button onClick={select.bind(null, 'text')}>{t('textButton')}</button>
-      <button onClick={select.bind(null, 'vcard')}>{t('vcardButton')}</button>
-      <button onClick={select.bind(null, 'wifi')}>{t('wifiButton')}</button>
-      <button onClick={select.bind(null, 'email')}>{t('emailButton')}</button>
-      <button onClick={select.bind(null, 'phone')}>{t('phoneButton')}</button>
-      <button onClick={select.bind(null, 'whatsapp')}>{t('whatsAppButton')}</button>
+      <Button onClick={select.bind(null, 'text')} text={t('textButton')} />
+      <Button onClick={select.bind(null, 'vcard')} text={t('vcardButton')} />
+      <Button onClick={select.bind(null, 'wifi')} text={t('wifiButton')} />
+      <Button onClick={select.bind(null, 'email')} text={t('emailButton')} />
+      <Button onClick={select.bind(null, 'phone')} text={t('phoneButton')} />
+      <Button onClick={select.bind(null, 'whatsapp')} text={t('whatsAppButton')}/>
     </div>
   );
 };
