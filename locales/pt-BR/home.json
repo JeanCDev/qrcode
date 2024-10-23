@@ -35,5 +35,7 @@
   "cellphone": "Celular",
   "phone": "Telefone",
   "email": "E-mail pessoal",
-  "website": "Site"
+  "website": "Site",
+  "noBackground": "Sem fundo",
+  "size": "Tamanho"
 }

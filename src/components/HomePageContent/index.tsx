@@ -1,33 +1,23 @@
 'use client';
 
-import { useCallback, useRef, useState } from "react";
+import { useState } from "react";
 import Selection from "../Selection";
 import Form from "../Form";
-import { QRCode } from "react-qrcode-logo";
 import Image from "next/image";
-import Button from "../Button";
+import PreviewContainer from "../PreviewContainer";
 
 const HomePageContent = () => {
-  const qrRef = useRef<any>({});
   const [type, setType] = useState('text')
   const [value, setValue] = useState(' ');
-  const [bgColor, setBgColor] = useState('white');
-
-  const download = useCallback(() => {
-    qrRef.current.download('png', 'qrcode');
-  }, []);
 
   return (
     <div id="mainPage" className="flex flex-col justify-items-center p-8 pb-20 sm:px-[10%] md:px-[20%] font-[family-name:var(--font-geist-sans)]">
-      <Selection select={setType}/>
+      <Selection select={setType} type={type}/>
       <main id="mainContent" className="grid gap-8">
         <aside id="formContainer" className="rounded-md p-5 sm:mr-5 flex-wrap flex-col w-full flex gap-5 bg-zinc-900">
           <Form type={type} setValue={setValue}/>
         </aside>
-        <section id="qrcode-container" className="flex flex-col gap-5 items-center justify-center rounded-md p-5 bg-zinc-900">
-          <QRCode ref={qrRef} bgColor={bgColor} value={value} quietZone={30} size={1024}/>
-          <Button disableMainBg onClick={download} text="Baixar" className="min-w-60 active:bg-zinc-500 hover:bg-zinc-500 bg-zinc-600"/>
-        </section>
+        <PreviewContainer value={value} />
       </main>
 
       <footer className="mt-16 flex-row flex gap-6 flex-wrap items-center justify-center">
