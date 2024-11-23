@@ -16,7 +16,7 @@ const PreviewContainer = ({
   const { t } = useTranslation();
 
   const [bgColor, setBgColor] = useState('white');
-  const [size, setSize] = useState(null);
+  const [size, setSize] = useState('');
 
   const download = useCallback(() => {
     qrRef.current.download('png', 'qrcode');
@@ -40,8 +40,8 @@ const PreviewContainer = ({
         </div>
         <input
           name="size"
-          value={size}
           type="number"
+          value={size}
           placeholder={t("1024px")}
           onChange={e => setSize(e.target.value)}
           className="p-0.5 rounded-md min-w-60 text-zinc-600"
@@ -49,7 +49,7 @@ const PreviewContainer = ({
       </label>
       <Button disableMainBg onClick={download} text="Baixar" className="min-w-60 active:bg-zinc-500 hover:bg-zinc-500 bg-zinc-600"/>
       <div className="hidden" id="hidden-qrcode-container">
-        <QRCode ref={qrRef} bgColor={bgColor} value={value} size={size - 20 || 1004}/>
+        <QRCode ref={qrRef} bgColor={bgColor} value={value} size={typeof size !== 'undefined' ? parseInt(size) - 20 : 1004}/>
       </div>
     </section>
   );
