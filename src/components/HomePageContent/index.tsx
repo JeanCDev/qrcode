@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Selection from "../Selection";
 import Form from "../Form";
 import PreviewContainer from "../PreviewContainer";
@@ -8,6 +8,10 @@ import PreviewContainer from "../PreviewContainer";
 const HomePageContent = () => {
   const [type, setType] = useState('text')
   const [value, setValue] = useState(' ');
+
+  useEffect(() => {
+    document.title = 'SmartScan';
+  }, [type]);
 
   return (
     <div id="mainPage" className="flex flex-col justify-items-center p-8 pb-20 sm:px-[10%] md:px-[20%] font-[family-name:var(--font-geist-sans)]">
